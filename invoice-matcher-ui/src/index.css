@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base page styling */
+@layer base {
+  body {
+    @apply min-h-screen bg-gray-50 font-sans;
+  }
+}
+
+/* glassy animated background */
+.glass-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(235, 245, 255, 0.9) 0%, rgba(226, 236, 255, 0.9) 55%, rgba(240, 246, 255, 0.95) 100%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* floating gradient blobs used on landing */
+.blob {
+  position: absolute;
+  filter: blur(52px);
+  opacity: 0.85;
+  z-index: -1;
+  border-radius: 9999px;
+}
+
+.blob-1 {
+  width: 420px;
+  height: 420px;
+  left: -120px;
+  top: -80px;
+  background: radial-gradient(circle at 30% 30%, rgba(99, 102, 241, 0.35), rgba(59, 130, 246, 0.25));
+}
+
+.blob-2 {
+  width: 540px;
+  height: 540px;
+  right: -160px;
+  bottom: -120px;
+  background: radial-gradient(circle at 70% 70%, rgba(139, 92, 246, 0.22), rgba(59, 130, 246, 0.16));
+}
+
+/* glass panel defaults used in matcher page */
+.backdrop-blur-md {
+  backdrop-filter: blur(8px);
+}
+
+/* file input dashed area - small visual helpers */
+input[type="file"]+div {
+  /* keep as-is - inputs are invisible and we render the custom UI */
+}
+
+/* small tweaks */
+.rounded-2xl {
+  border-radius: 16px;
+}
