@@ -29,9 +29,11 @@ export default function MatcherPage() {
     formData.append("po", poFile);
 
     try {
-      const response = await axios.post("http://localhost:8000/match", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      const response = await axios.post(
+        "https://invoice-po-matcher-vtq4.onrender.com/match",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
       setResult(response.data);
     } catch (err) {
       setError("An error occurred. Is the backend server running?");
